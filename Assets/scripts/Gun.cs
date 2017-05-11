@@ -4,12 +4,16 @@ public class Gun : MonoBehaviour {
 
     [SerializeField]
     private GameObject bulletImpact;
+    [SerializeField]
+	private float damage;
+    [SerializeField]
+    private float range;
+    [SerializeField]
+    private float bulletForce;
+    [SerializeField]
+    private float fireRate;
     private Camera mainCam;
     private ParticleSystem muzzleFlash;
-	private float damage = 10f;
-    private float range = 100f;
-    private float bulletForce = 60f;
-    private float fireRate = 10f;
     private float nextTimeToFire = 0f;
 
     private void Awake ()
