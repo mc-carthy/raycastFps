@@ -9,6 +9,8 @@ public class Gun : MonoBehaviour {
 	private float damage = 10f;
     private float range = 100f;
     private float bulletForce = 60f;
+    private float fireRate = 10f;
+    private float nextTimeToFire = 0f;
 
     private void Awake ()
     {
@@ -18,8 +20,9 @@ public class Gun : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && Time.time > nextTimeToFire)
         {
+            nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
     }
