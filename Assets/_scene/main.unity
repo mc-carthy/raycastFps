@@ -33178,6 +33178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec1f5a31b9b54274bf4727a97fa95de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletImpact: {fileID: 1794284729370878, guid: de7755d2bdcad47208cfb2ef9ff44e23,
+    type: 2}
 --- !u!1 &838572866
 GameObject:
   m_ObjectHideFlags: 0

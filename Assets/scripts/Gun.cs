@@ -2,6 +2,8 @@
 
 public class Gun : MonoBehaviour {
 
+    [SerializeField]
+    private GameObject bulletImpact;
     private Camera mainCam;
     private ParticleSystem muzzleFlash;
 	private float damage = 10f;
@@ -34,6 +36,8 @@ public class Gun : MonoBehaviour {
                 Debug.Log(target.gameObject.name);
                 target.TakeDamage(damage);
             }
+
+            Instantiate(bulletImpact, hit.point, Quaternion.LookRotation(hit.normal));
         }
     }
 
