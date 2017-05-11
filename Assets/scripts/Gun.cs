@@ -37,6 +37,12 @@ public class Gun : MonoBehaviour {
         ammoInClip = clipSize;
     }
 
+    private void OnEnable()
+    {
+        isReloading = false;
+        anim.SetBool("isReloading", false);
+    }
+
     private void Update()
     {
         Fire();
@@ -93,8 +99,9 @@ public class Gun : MonoBehaviour {
     {
         isReloading = true;
         anim.SetBool("isReloading", true);
-        yield return new WaitForSeconds(reloadTime);
+        yield return new WaitForSeconds(reloadTime - 0.25f);
         anim.SetBool("isReloading", false);
+        yield return new WaitForSeconds(0.25f);
         isReloading = false;
         ammoInClip = clipSize;
     }
