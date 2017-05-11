@@ -38954,6 +38954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 923969061}
   - component: {fileID: 923969062}
+  - component: {fileID: 923969063}
   m_Layer: 0
   m_Name: weaponHolder
   m_TagString: Untagged
@@ -38988,6 +38989,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc890ce1aee0d48a6834d27180d25355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &923969063
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923969060}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df0d290dafb3245828167fdd9e652d74, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &937321199
 GameObject:
   m_ObjectHideFlags: 0

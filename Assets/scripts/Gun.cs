@@ -20,6 +20,7 @@ public class Gun : MonoBehaviour {
 
     private Camera mainCam;
     private ParticleSystem muzzleFlash;
+    private Animator anim;
     private float nextTimeToFire = 0f;
     private int ammoInClip;
     private bool isReloading = false;
@@ -28,6 +29,7 @@ public class Gun : MonoBehaviour {
     {
         mainCam = Camera.main;
         muzzleFlash = GetComponentInChildren<ParticleSystem>();
+        anim = GetComponentInParent<Animator>();
     }
 
     private void Start()
@@ -50,7 +52,6 @@ public class Gun : MonoBehaviour {
         if (ammoInClip <= 0)
         {
             StartCoroutine(Reload());
-            isReloading = true;
             return;
         }
 
@@ -90,7 +91,10 @@ public class Gun : MonoBehaviour {
 
     private IEnumerator Reload()
     {
+        isReloading = true;
+        anim.SetBool("isReloading", true);
         yield return new WaitForSeconds(reloadTime);
+        anim.SetBool("isReloading", false);
         isReloading = false;
         ammoInClip = clipSize;
     }
