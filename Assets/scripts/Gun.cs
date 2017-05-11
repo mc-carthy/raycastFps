@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour {
     private ParticleSystem muzzleFlash;
 	private float damage = 10f;
     private float range = 100f;
+    private float bulletForce = 60f;
 
     private void Awake ()
     {
@@ -37,7 +38,13 @@ public class Gun : MonoBehaviour {
                 target.TakeDamage(damage);
             }
 
-            Instantiate(bulletImpact, hit.point, Quaternion.LookRotation(hit.normal));
+            if (hit.rigidbody)
+            {
+                hit.rigidbody.AddForce(-hit.normal * bulletForce);
+            }
+
+            GameObject impactGO = Instantiate(bulletImpact, hit.point, Quaternion.LookRotation(hit.normal)) as GameObject;
+            Destroy(impactGO, 2f);
         }
     }
 
