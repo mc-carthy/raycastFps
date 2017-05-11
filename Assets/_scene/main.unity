@@ -36154,6 +36154,8 @@ MonoBehaviour:
   range: 100
   bulletForce: 60
   fireRate: 8
+  clipSize: 20
+  reloadTime: 1
 --- !u!1 &838572866
 GameObject:
   m_ObjectHideFlags: 0
@@ -64907,6 +64909,8 @@ MonoBehaviour:
   range: 50
   bulletForce: 20
   fireRate: 5
+  clipSize: 12
+  reloadTime: 0.5
 --- !u!1 &1733116263
 GameObject:
   m_ObjectHideFlags: 0
@@ -78819,6 +78823,8 @@ MonoBehaviour:
   range: 200
   bulletForce: 120
   fireRate: 1
+  clipSize: 5
+  reloadTime: 2
 --- !u!1 &1952657201
 GameObject:
   m_ObjectHideFlags: 0
